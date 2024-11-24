@@ -1,25 +1,27 @@
-const products = [];
-exports.getAddProduct = (req, res, next) => {
-    res.render('add-product', {
-      pageTitle: 'Add Product',
-      path: '/admin/add-product',
-      formsCSS: true,
-      productCSS: true,
-      activeAddProduct: true
-    });
-}
-exports.postAddPRoduct = (req, res, next) => {
-    products.push({ title: req.body.title });
-    res.redirect('/');
-}
-exports.getProducts = (req, res, next) => {
-    const products = adminData.products;
-    res.render('shop', {
-      prods: products,
-      pageTitle: 'Shop',
-      path: '/',
-      hasProducts: products.length > 0,
-      activeShop: true,
-      productCSS: true
-    });
+const Sequelize = require("sequelize");
+
+const sequelize = require("../util/database");
+
+const Product = sequelize.define('product',{
+  id:{
+    type:Sequelize.INTEGER,
+    autoIncrement : true,
+    allowNull : false,
+    primaryKey : true
+  },
+  title:Sequelize.STRING,
+  price : {
+    type : Sequelize.DOUBLE,
+    allowNull : false
+  },
+  imageUrl: {
+    type:Sequelize.STRING,
+    allowNull : false
+  },
+  description: {
+    type:Sequelize.STRING,
+    allowNull : false
   }
+})
+
+module.exports = Product;  //exporting the model to be used in other files
