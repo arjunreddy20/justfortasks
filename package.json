@@ -1,23 +1,25 @@
 {
-  "name": "nodejs-complete-guide",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-handlebars": "^8.0.1",
+    "mysql2": "^3.11.4",
+    "pug": "^3.0.3",
+    "sequelize": "^6.37.5"
+  },
+  "name": "2.2-00-starting-setup",
   "version": "1.0.0",
-  "description": "Complete Node.js Guide",
   "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "start-server": "node app.js"
   },
-  "author": "Maximilian Schwarzmüller",
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^1.18.3"
-  },
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "pug": "^2.0.3"
-  }
+  "description": ""
 }
